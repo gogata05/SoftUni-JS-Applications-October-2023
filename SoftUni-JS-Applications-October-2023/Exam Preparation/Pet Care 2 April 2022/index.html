@@ -1,0 +1,50 @@
+<!--Split screen into 3 parts-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" /><!--!-->
+    <script type="module" src="./src/app.js"></script>
+    <title>Pet Care</title><!--Rename-->
+  </head>
+  <!--make 2 copies of index.html in resources and delete index.html in resources-->
+  <!--copy all 3 index.html from the scaffold and paste in resources-->
+  <!--modify index.html resources 2(copy div,navigation,main,footer) and paste it here-->
+
+  <!--add to Logout button:
+        href="javascript:void(0)" id="logout-btn"-->
+  <!--copy <main> id="" to app.js-->
+    
+  <!--add href everywhere: "/" "/login" "/register" "/dashboard" "/add-item" "/details/:id" "/edit/:id",-->
+  <!--add href "search" or "profile" if they exists: "/search" "/profile"-->
+  <body>
+
+<!--Replace this after u copy the all 3 index.html files in resources-->
+    <!--Navigation-->
+    <header>
+      <nav>
+          <section class="logo">
+              <img src="./images/logo.png" alt="logo">
+          </section>
+          <ul>
+              <!--Users and Guest-->
+              <li class="user-and-guest"><a href="/">Home</a></li>
+              <li class="user-and-guest"><a href="dashboard">Dashboard</a></li>
+              <!--Only Guest-->
+              <li class="guest"><a href="/login">Login</a></li>
+              <li class="guest"><a href="/register">Register</a></li>
+              <!--Only Users-->
+              <li class="user"><a href="/add-item">Create Postcard</a></li>
+              <li class="user"><a href="javascript:void(0)" id="logout-btn">Logout</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <main id="content">
+  </main>
+  <footer>Pet Care 2022©</footer>
+    
+  </body>
+</html>

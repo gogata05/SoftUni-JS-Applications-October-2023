@@ -1,0 +1,31 @@
+login:
+  email,
+  password
+
+reg:
+email,
+password
+
+dashboard:/data/offers?sortBy=_createdOn%20desc
+
+create:
+  title,
+  imageUrl, 
+  category, 
+  description, 
+  requirements, 
+  salary
+
+edit:
+title,
+  imageUrl, 
+  category, 
+  description, 
+  requirements, 
+  salary
+
+like:  // offerId
+
+total:/data/applications?where=offerId%3D%22{offerId}%22&distinct=_ownerId&count
+
+didUserLiked:/data/applications?where=offerId%3D%22{offerId}%22%20and%20_ownerId%3D%22{userId}%22&count

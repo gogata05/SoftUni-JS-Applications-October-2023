@@ -1,0 +1,33 @@
+log:
+email,
+password
+
+reg:
+email,
+password
+
+dash:/data/posts?sortBy=_createdOn%20desc
+
+create:
+  title,
+  description,
+  imageUrl,
+  address,
+  phone
+
+edit:
+  title,
+  description,
+  imageUrl,
+  address,
+  phone
+
+profile:/data/posts?where=_ownerId%3D%22{userId}%22&sortBy=_createdOn%20desc
+
+like: // postId
+
+likes: /data/donations
+
+total: /data/donations?where=postId%3D%22${postId}%22&distinct=_ownerId&count
+
+didUserLiked: /data/donations?where=postId%3D%22${postId}%22%20and%20_ownerId%3D%22${userId}%22&count

@@ -1,0 +1,17 @@
+  reg:
+  username,
+  email,
+  password,
+  gender
+
+create:
+  title,
+  description,
+  imageUrl
+
+  edit:
+  title,
+  description,
+  imageUrl
+
+

@@ -1,0 +1,50 @@
+<!--Split screen into 3 parts-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" /><!--!-->
+    <script type="module" src="./src/app.js"></script>
+    <title>Orphanage help</title><!--Rename-->
+  </head>
+  <!--make 2 copies of index.html in resources and delete index.html in resources-->
+  <!--copy all 3 index.html from the scaffold and paste in resources-->
+  <!--modify index.html resources 2(copy div,navigation,main,footer) and paste it here-->
+
+  <!--add to Logout button:
+        href="javascript:void(0)" id="logout-btn"-->
+  <!--copy <main> id="" to app.js-->
+    
+  <!--add href everywhere: "dashboard" "/login" "/register" "/" "/add-item" "/details/:id" "/edit/:id",-->
+  <!--add href "search" or "profile" if they exists: "/search" "/profile"-->
+  <body>
+
+<!--Replace this after u copy the all 3 index.html files in resources-->
+<div id="box">
+  <header>
+      <!-- Navigation -->
+      <h1><a href="/">Orphelp</a></h1>
+
+      <nav>
+          <a href="/">Dashboard</a>
+          <!-- Logged-in users -->
+          <div id="user">
+              <a href="/profile">My Posts</a>
+              <a href="/add-item">Create Post</a>
+              <a href="javascript:void(0)" id="logout-btn">Logout</a>
+          </div>
+          <!-- Guest users -->
+          <div id="guest">
+              <a href="/login">Login</a>
+              <a href="/register">Register</a>
+          </div>
+      </nav>
+  </header>
+  <main id="main-content">
+  </main>
+</div>
+    
+  </body>
+</html>

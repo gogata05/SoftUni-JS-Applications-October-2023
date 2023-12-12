@@ -1,0 +1,50 @@
+<!--Split screen into 3 parts-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" /><!--!-->
+    <script type="module" src="./src/app.js"></script>
+    <title>Theater</title><!--Rename-->
+  </head>
+  <!--make 2 copies of index.html in resources and delete index.html in resources-->
+  <!--copy all 3 index.html from the scaffold and paste in resources-->
+  <!--modify index.html resources 2(copy div,navigation,main,footer) and paste it here-->
+
+  <!--add to Logout button:
+        href="javascript:void(0)" id="logout-btn"-->
+  <!--copy <main> id="" to app.js-->
+    
+  <!--add href everywhere: "/" "/login" "/register" "/dashboard" "/add-item" "/details/:id" "/edit/:id",-->
+  <!--add href "search" or "profile" if they exists: "/search" "/profile"-->
+  <body>
+
+<!--Replace this after u copy the all 3 index.html files in resources-->
+<div id="container">
+  <!--Navigation-->
+  <header>
+      <nav>
+          <a href="/">Theater</a>
+          <ul>
+              <!--Only users-->
+              <li class="user"><a href="/profile">Profile</a></li>
+              <li class="user"><a href="/add-item">Create Event</a></li>
+              <li class="user"><a href="javascript:void(0)" id="logout-btn">Logout</a></li>
+              <!--Only guest-->
+              <li class="guest"><a href="/login">Login</a></li>
+              <li class="guest"><a href="/register">Register</a></li>
+          </ul>
+      </nav>
+  </header>
+  <main id="content"></main>
+  <footer>
+      <div>© 2021
+          <h3>JS Application</h3>
+      </div>
+  </footer>
+</div>
+    
+  </body>
+</html>

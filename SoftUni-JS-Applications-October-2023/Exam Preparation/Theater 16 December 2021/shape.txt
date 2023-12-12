@@ -1,0 +1,14 @@
+create.js
+title,
+  date,
+  author,
+  imageUrl
+  description
+
+  edit.js
+  title,
+  date,
+  author,
+  description,
+  imageUrl
+

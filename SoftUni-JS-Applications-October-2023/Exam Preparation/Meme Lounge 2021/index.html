@@ -1,0 +1,62 @@
+<!--Split screen into 3 parts-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/styles.css" /><!--!-->
+    <script type="module" src="./src/app.js"></script>
+    <title>Meme Lounge</title><!--Rename-->
+  </head>
+  <!--make 2 copies of index.html in resources and delete index.html in resources-->
+  <!--copy all 3 index.html from the scaffold and paste in resources-->
+  <!--modify index.html resources 2(copy div,navigation,main,footer) and paste it here-->
+
+  <!--add to Logout button:
+        href="javascript:void(0)" id="logout-btn"-->
+  <!--copy <main> id="" to app.js-->
+    
+  <!--add href everywhere: "/" "/login" "/register" "/dashboard" "/add-item" "/details/:id" "/edit/:id",-->
+  <!--add href "search" or "profile" if they exists: "/search" "/profile"-->
+  <body>
+
+    <!-- Notifications -->
+    <section id="notifications">
+      <div id="errorBox" class="notification">
+          <span>MESSAGE</span>
+      </div>
+  </section>
+  
+<!--Replace this after u copy the all 3 index.html files in resources-->
+<div id="container">
+  <!-- Navigation -->
+  <nav>
+      <a href="/dashboard">All Memes</a>
+       <!-- Logged users -->
+      <div class="user">
+          <a href="/add-item">Create Meme</a>
+          <div class="profile">
+              <span>Welcome, {email}</span>
+              <a href="/profile">My Profile</a>
+              <a href="javascript:void(0)" id="logout-btn">Logout</a>
+          </div>
+      </div>
+      <!-- Guest users -->
+      <div class="guest">
+          <div class="profile">
+              <a href="/login">Login</a>
+              <a href="/register">Register</a>
+          </div>
+          <a class="active" href="/">Home Page</a>
+      </div>
+  </nav>
+  <main id="content">
+  </main>
+  <footer class="footer">
+      <p>Created by SoftUni Delivery Team</p>
+  </footer>
+</div>
+    
+  </body>
+</html>

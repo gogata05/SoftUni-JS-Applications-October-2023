@@ -1,0 +1,21 @@
+dash:
+URL: /data/cars?sortBy=_createdOn%20desc
+
+add:
+  model,
+  imageUrl, 
+  price, 
+  weight,
+  speed,
+  about
+
+edit:
+  model,
+  imageUrl, 
+  price, 
+  weight,
+  speed,
+  about
+
+search:
+URL: /data/cars?where=model%20LIKE%20%22${query}%22

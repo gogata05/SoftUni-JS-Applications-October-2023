@@ -1,0 +1,29 @@
+log:
+email,
+password
+
+reg:
+//email,
+//password
+
+dashboard:/data/products?sortBy=_createdOn%20desc
+
+create:
+  name,
+  imageUrl, 
+  category, 
+  description, 
+  price
+
+edit:
+  name,
+  imageUrl, 
+  category, 
+  description, 
+  price
+
+likes: //producId or productId ???
+
+total:/data/bought?where=productId%3D%22{productId}%22&distinct=_ownerId&count
+
+didUserLiked:/data/bought?where=productId%3D%22{productId}%22%20and%20_ownerId%3D%22{userId}%22&count
