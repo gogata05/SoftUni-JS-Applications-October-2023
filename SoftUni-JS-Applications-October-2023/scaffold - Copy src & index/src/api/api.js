@@ -24,7 +24,7 @@ async function request(url, options) {
         throw err;
     }
 }
-// Function that creates headers, bases on application state and body
+//Function that creates headers, bases on application state and body
 function createOptions(method = 'get', body) {
     const options = {
         method,
@@ -40,7 +40,7 @@ function createOptions(method = 'get', body) {
     }
     return options;
 }
-// Decorator function for all REST methods
+//Decorator function for all REST methods
 export async function get(url) {
     return await request(url, createOptions());
 }
@@ -53,7 +53,9 @@ export async function put(url, data) {
 export async function del(url) {
     return await request(url, createOptions('delete'));
 }
-// Authentication function (login/register/logout)
+//login/register/logout
+//if the login is "username" not "email"
+//Replace "email" with "username" down below only
 export async function login(email, password) {
     const result = await post(settings.host + '/users/login', { email, password });
     setUserData(result);

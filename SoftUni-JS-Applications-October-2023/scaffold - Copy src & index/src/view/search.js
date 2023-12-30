@@ -3,6 +3,15 @@ import { html } from "../../node_modules/lit-html/lit-html.js";
 import { search } from '../api/data.js';
 import { getUserData } from '../utility.js';//logged or not info
 
+//search: search1
+//add to "Search" button:          @click=${onSearch} (if there is no: type="button" add both: type="button" @click=${onSearch})
+//replace text with variables:     ${items.name}
+//replace src with image shape:    src="${items.imageUrl}"
+//fix href="#" :                   href="/details/${items._id}"
+//use "search1" for No results 
+//copy shape here:
+
+
 const searchTemplate = (items, onSearch, user) => html`
  <!--TODO-->
  
@@ -13,9 +22,8 @@ const searchTemplate = (items, onSearch, user) => html`
 //      <div class="btn-group">
 //        <a href="/details/${item._id}" id="details">Details</a>
 //      </div>`: ""}
-//copy shape here:
 
-
+//example
 const searchTemplate2 = (items, onSearch, user) => html`
  <section id="search">
         <div class="form">
@@ -31,9 +39,12 @@ const searchTemplate2 = (items, onSearch, user) => html`
 </div>
 <h4 id="result-heading">Results:</h4>
         
+
+
             ${items != undefined ? html `
 
                 <div class="search-result">
+
                 ${items.length == 0 ? html`
                 <h2 class="no-avaliable">No result.</h2>` 
                 : 
@@ -44,8 +55,7 @@ const searchTemplate2 = (items, onSearch, user) => html`
                 <h3 class="model">${x.model}</h3>
                 
                 <a class="details-btn" href="/details/${x._id}">More Info</a>
-                </div>`)
-                            }
+                </div>`)}
             </div>
             `: ''}
         </section>
@@ -54,9 +64,10 @@ const searchTemplate2 = (items, onSearch, user) => html`
 export async function searchPage(ctx) {
   let user = getUserData(ctx.user);
   console.log(user);
-  let items = undefined;
+  let items = []; 
 const name = ctx.querystring.split('=')[1];
-    if(name !== undefined) {
+
+    if (name) {
       items = await search(name);
     }
     console.log(items);

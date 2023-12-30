@@ -2,16 +2,18 @@ import { html } from "../../node_modules/lit-html/lit-html.js";
 import { addItem } from "../api/data.js";
 //import { getUserData } from "../utility.js";//logged or not info
 
+//login
+//add in </form>       @submit=${onSubmit}
+//the image placeholder needs to have "URL" at the end
+//id,class,href,placeholder,type,name,onSubmit
+//copy shape here:
+
+
 const createTemplate = (onSubmit) => html`
 <!--TODO-->
 
 `;
-//login
-//check if the html is the same
-//1.1.add into the html: @submit=${onSubmit} and change:
-//the image placeholder needs to have "URL" at the end
-//id,class,href,placeholder,type,name,onSubmit
-
+//example
 const createTemplate2 = (onSubmit) => html`
 <section id="create">
           <div class="form"  @submit=${onSubmit}>
@@ -56,15 +58,18 @@ export async function createPage(ctx) {
       );
       const formData = new FormData(event.target);
       const objectName = {
-        //fix names
+        //fix properties
         //copy shape here:
 
+        
         model: formData.get("model").trim(),
         imageUrl: formData.get("imageUrl").trim(),
         year: formData.get("year").trim(),
         mileage: formData.get("mileage").trim(),
         contact: formData.get("contact").trim(),
         about: formData.get("about").trim(),
+        //shapeName: formData.get("name="name" ").trim(),// shape : name=""
+      //year: Number(formData.get("year").trim()),//if create makes correct API call test falls
       };
       if (Object.values(objectName).some((x) => !x)) {
         return alert("All fields are required!");

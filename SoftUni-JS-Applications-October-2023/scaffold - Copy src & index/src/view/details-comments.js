@@ -8,6 +8,17 @@ import {
 } from "../api/data.js";
 //import { getUserData } from "../utility.js";//logged or not info
 
+//details: owner1,comments1,login1
+//replace text with variables:     ${item.name}
+//replace src with image shape:    src="${item.imageUrl}"
+//fix href="#" on "Edit" button:   href="/edit/${item._id}"
+//add to "Delete" button:          @click=${onDelete} href="javascript:void(0)"
+//use "owner1" for isOwner 
+//use "comment1" for No comments
+//use "login" for New comments
+////copy shape here:
+
+
 const detailsTemplate = (
   item,
   onDelete,
@@ -21,77 +32,70 @@ const detailsTemplate = (
 <!--TO DO-->
 
 `;
-
-//details
-//item,href,comments,onSubmit,isOwner,isLoggedIn,@click=${onDelete}
-//id,class
-//careful with href="/edit/
-//copy shape here:
-
-
+//example
 const detailsTemplate2 = (
-    item,
-    onDelete,
-    userData,
-    isOwner,
-    isLoggedIn,
-  
-    comments,
-    onSubmit
-  ) => html`
+  item,
+  onDelete,
+  userData,
+  isOwner,
+  isLoggedIn,
+
+  comments,
+  onSubmit
+) => html`
   <section id="game-details">
-      <h1>Game Details</h1>
-      <div class="info-section">
-        <div class="game-header">
-          <img class="game-img" src="${item.imageUrl}" />
-          <h1>${item.title}</h1>
-          <span class="levels">MaxLevel: ${item.maxLevel}</span>
-          <p class="type">${item.category}</p>
-        </div>
-        <p class="text">${item.summary}</p>
-        <div class="details-comments">
-          <h2>Comments:</h2>
-
-          ${comments.length > 0
-            ? html`
-                <ul>
-                  ${comments.map(
-                    (x) => html`
-                      <li class="comment">
-                        <p>Content: ${x.comment}</p>
-                      </li>
-                    `
-                  )}
-                </ul>
-              `
-            : html` <p class="no-comment">No comments.</p> `}
-        </div>
-
-        ${isOwner
-          ? html`
-              <div class="buttons">
-                <a href="/edit/${item._id}" class="button">Edit</a>
-                <a href="javascript:void(0)" class="button" @click=${onDelete}
-                  >Delete</a
-                >
-              </div>
-            `
-          : null}
+    <h1>Game Details</h1>
+    <div class="info-section">
+      <div class="game-header">
+        <img class="game-img" src="${item.imageUrl}" />
+        <h1>${item.title}</h1>
+        <span class="levels">MaxLevel: ${item.maxLevel}</span>
+        <p class="type">${item.category}</p>
       </div>
+      <p class="text">${item.summary}</p>
+      <div class="details-comments">
+        <h2>Comments:</h2>
 
-      ${!isOwner && isLoggedIn
+        ${comments.length == 0
+          ? html` <p class="no-comment">No comments.</p> `
+          : html`
+              <ul>
+                ${comments.map(
+                  (x) => html`
+                    <li class="comment">
+                      <p>Content: ${x.comment}</p>
+                    </li>
+                  `
+                )}
+              </ul>
+            `}
+      </div>
+  
+      ${isOwner
         ? html`
-            <article class="create-comment">
-              <label>Add new comment:</label>
-              <form class="form" @submit=${onSubmit}>
-                <textarea name="comment" placeholder="Comment......"></textarea>
-                <input class="btn submit" type="submit" value="Add Comment" />
-              </form>
-            </article>
+            <div class="buttons">
+              <a href="/edit/${item._id}" class="button">Edit</a>
+              <a href="javascript:void(0)" class="button" @click=${onDelete}
+                >Delete</a
+              >
+            </div>
           `
         : null}
-    </section>
-  `;
+    </div>
+
+    ${!isOwner && isLoggedIn
+      ? html`
+          <article class="create-comment">
+            <label>Add new comment:</label>
+            <form class="form" @submit=${onSubmit}>
+              <textarea name="comment" placeholder="Comment......"></textarea>
+              <input class="btn submit" type="submit" value="Add Comment" />
+            </form>
+          </article>
+        `
+      : null}
+  </section>
+`;
 
 export async function detailsPage(ctx) {
     const itemId = ctx.params.id;
@@ -138,5 +142,3 @@ export async function detailsPage(ctx) {
       }
     }
   }
-
-

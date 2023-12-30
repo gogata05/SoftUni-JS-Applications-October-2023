@@ -1,15 +1,14 @@
 import { html } from "../../node_modules/lit-html/lit-html.js";
 import { login, register } from "../api/api.js";
-
+//login
+//add in </form>       @submit=${onSubmit}
+//add in href="#":     href="/register"
+//id,class,href,placeholder,type,name,value
 const loginTemplate = (onSubmit) => html`
 <!--TODO-->
 
 `;
-
-//login
-//check if the html is the same
-//add into the html: @submit=${onSubmit} and replace href="#" with href="/register"
-//id,class,href,placeholder,type,name,value
+//example
 const loginTemplate2 = (onSubmit) => html` 
 <section id="login">
 	<div class="form">
@@ -35,10 +34,17 @@ export async function loginPage(ctx) {
   async function onSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
+
+	//if the login is "username" not "email"
+    //Replace "email" with "username" down below only
+	//copy shape here:
+
+
     const email = formData.get("email");
     const password = formData.get("password");
+	
     if (!password || !email) {
-      return alert("All fields are required!");
+      return alert("All fields are required!");//notify
     }
     await login(email, password);
     event.target.reset();
@@ -46,16 +52,16 @@ export async function loginPage(ctx) {
     ctx.page.redirect("/");
   }
 }
-
+//register
+//add in </form>              @submit=${onSubmit}
+//add in href="#":            href="/login"
+//check if:name="re-password"
+//id,class,href,placeholder,type,name,value
 const registerTemplate = (onSubmit) => html`
 <!--TODO-->
 
 `;
-
-//register
-//check if the html is the same
-//add into the html: @submit=${onSubmit} and replace href="#" with href="/login"
-//id,class,href,placeholder,type,name,value
+//example
 const registerTemplate2 = (onSubmit) => html`
 	<section id="register">
 		<div class="form">
@@ -91,9 +97,15 @@ export async function registerPage(ctx) {
   async function onSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const email = formData.get("email");
-    const password = formData.get("password");
-    const repeatPass = formData.get("re-password");//
+
+	//if the register is "username" not "email"
+    //Replace "email" with "username" down below only
+	//copy shape here:
+
+
+    const email = formData.get("email");//!
+    const password = formData.get("password");//!
+    const repeatPass = formData.get("re-password");//!
     if (!password || !email) {
       return alert("All fields are required!");
     } else if (password != repeatPass) {

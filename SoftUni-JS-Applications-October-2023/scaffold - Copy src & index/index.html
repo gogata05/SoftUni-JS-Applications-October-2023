@@ -1,30 +1,37 @@
+<!--Split screen into 3 parts-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=\, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/styles.css" /><!--!-->
     <script type="module" src="./src/app.js"></script>
-
     <title>Name</title><!--Rename-->
   </head>
+  <!--make 2 copies of index.html in resources and delete index.html in resources-->
+  <!--copy all 3 index.html from the scaffold and paste in resources-->
+  <!--modify index.html resources 2(copy div,navigation,main,footer) and paste it here-->
+
+  <!--add to Logout button:
+        href="javascript:void(0)" id="logout-btn"-->
+  <!--copy <main> id="" to app.js-->
+    
+  <!--add href everywhere: "/" "/login" "/register" "/dashboard" "/add-item" "/details/:id" "/edit/:id",-->
+  <!--add href "search" or "profile" if they exists: "/search" "/profile"-->
   <body>
 
- <!--Rename names/id/class/href/src if needed-->
-
+<!--Replace this after u copy the all 3 index.html files in resources-->
     <div id="wrapper">
       <header>
         <!-- Navigation -->
-
-        <!--Rename names/id/class/href/src if needed-->
         <a id="logo" href="/"
           ><img id="logo-img" src="./images/logo.png" alt=""
         /></a>
         <nav>
           <div>
             <a href="/dashboard">Fruits</a>
-            <a href="/search">Search</a><!--delete if bonus is not search-->
+            <a href="/search">Search</a>
           </div>
           <!-- Logged-in users -->
           <div class="user">

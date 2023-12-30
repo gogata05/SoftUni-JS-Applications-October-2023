@@ -5,10 +5,11 @@ export const login = api.login;
 export const register = api.register;
 export const logout = api.logout;
 
-
+//main
 //Replace names url: Ctrl+H
+////check description URLs if different
 export async function getAllItems() {
-  return await api.get(host + `/data/names?sortBy=_createdOn%20desc`);//sometimes different
+  return await api.get(host + `/data/names?sortBy=_createdOn%20desc`);//!
 }
 export async function getItemById(id) {
   return await api.get(host + `/data/names/${id}`);
@@ -22,39 +23,53 @@ export async function editItemById(id, item) {
 export async function deleteItemById(id) {
   return await api.del(host + `/data/names/${id}`);
 }
-// export async function search(query) {
-//   return await api.get(host + `/data/names?where=name%20LIKE%20%22${query}%22`);//sometimes different
-// }//remove if bonus not search
 
+////Search: remove if bonus not search!
+export async function search(item) {
+  return await api.get(host + `/data/names?where=name%20LIKE%20%22${item}%22`);//!
+}
 
-//likes
-//Replace fact url: Ctrl+H
+////Like: remove if bonus not likes!
+//Replace factId url: Ctrl+H
+////check description URLs if different
 export async function like(itemId) {
-  return await api.post(host + `/data/likes`, itemId);//replace
+  return await api.post(host + `/data/likes`, itemId);//!
 }
 export async function getTotalLikes(itemId) {
   return await api.get(
     host +
-      `/data/likes?where=factId%3D%22${itemId}%22&distinct=_ownerId&count`//sometimes different
+      `/data/likes?where=factId%3D%22${itemId}%22&distinct=_ownerId&count`//!
   );
 }
 export async function didUserLiked(itemId, userId) {
   return await api.get(
     host +
-      `/data/likes?where=factId%3D%22${itemId}%22%20and%20_ownerId%3D%22${userId}%22&count`//sometimes different
+      `/data/likes?where=factId%3D%22${itemId}%22%20and%20_ownerId%3D%22${userId}%22&count`//!
   );
 }
 
-//complicated home view/not often used
+//Comment: remove if bonus not comments
+////check description URLs if different
+export async function getComments(itemId) {
+  return await api.get(host + `/data/comments?where=gameId%3D%22${itemId}%22`);//!
+}
+export async function makeComment(itemId, comment) {
+  return await api.post(host + "/data/comments",{ gameId: itemId, comment });//!
+}
+
+//Profile: remove if bonus not profile!
+////check description URLs if different
+export async function getAllMyItems() {
+  let user = JSON.parse(sessionStorage.getItem('user'));
+  let userId = user && user._id;
+  if (user) {
+      let data = await api.get(host +`/data/cars?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`)//!
+      return data
+  }
+}
+
+//complicated home view://remove if home is without if else ? : //not often used
+////check description URLs if different
 export async function getHome() {
-  return await api.get(host + `/data/games?sortBy=_createdOn%20desc&distinct=category`);//when home is with if else ? ://sometimes different
+  return await api.get(host + `/data/games?sortBy=_createdOn%20desc&distinct=category`);//!
 }
-
-//comments
-export async function getComments(gameId) {
-  return await api.get(host + `/data/comments?where=gameId%3D%22${gameId}%22`);//sometimes different
-}
-export async function makeComment(gameId, comment) {
-  return await api.post(host + "/data/comments",{ gameId, comment });//sometimes different
-}
-

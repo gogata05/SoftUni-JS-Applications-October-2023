@@ -9,6 +9,18 @@ import {
 } from "../api/data.js";
 //import { getUserData } from "../utility.js";//logged or not info
 
+//details: owner1,login1,like1
+//replace text with variables:     ${item.name}
+//replace src with image shape:    src="${item.imageUrl}"
+//fix href="#" on "Edit" button:   href="/edit/${item._id}"
+//add to "Delete" button:          @click=${onDelete} href="javascript:void(0)"
+//replace likes count w variable:  ${totalLikesCount}
+//add to "Like" button             href="javascript:void(0)" @click=${onClickLike}
+//use "owner1" for isOwner 
+//use "like1" for userLiked
+////copy shape here:
+
+
 const detailsTemplate = (
   item,
   isOwner,
@@ -22,15 +34,7 @@ const detailsTemplate = (
 <!--TO DO-->
 
 `;
-
-//details
-//item,href,isOwner,isLoggedIn,@click=${onDelete},@click=${onClickLike}
-//getTotalLikes,like,didUserLiked
-//totalLikesCount,onClickLike,userLiked
-//id,class
-//copy shape here:
-
-
+//example
 const detailsTemplate2 = (
   item,
   isOwner,

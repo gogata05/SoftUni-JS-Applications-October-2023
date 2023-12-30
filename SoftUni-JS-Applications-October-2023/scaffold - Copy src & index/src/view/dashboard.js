@@ -2,6 +2,14 @@ import { html } from "../../node_modules/lit-html/lit-html.js";
 import { getAllItems } from "../api/data.js";
 //import { getUserData } from "../utility.js";//logged or not info
 
+//dashboard:dash1
+//replace text with variables:  ${x.name}
+//replace src with image shape: src="${x.imageUrl}"
+//fix href="#" :                href="/details/${x._id}"
+//isLoggedIn,isOwner if needed
+//copy shape here:
+
+
 const dashboardTemplate = (items) => html`
 <!--TO DO-->
 
@@ -12,12 +20,11 @@ const dashboardTemplate = (items) => html`
 //    <a href="/details/${x._id}" id="details">Details</a>
 // </div>`: ''} 
 
-//dashboard
-//x,href,id,class,isLoggedIn,isOwner,alt,
-
+//example
 const dashboardTemplate2 = (items) => html`
 <h2>Items</h2>
 <section id="dashboard">
+  
   ${items.length == 0
     ? html`
     <h2>No item info yet.</h2>`

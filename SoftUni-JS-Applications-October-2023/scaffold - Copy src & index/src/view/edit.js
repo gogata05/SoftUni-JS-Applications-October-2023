@@ -2,16 +2,19 @@ import { html } from "../../node_modules/lit-html/lit-html.js";
 import { editItemById, getItemById } from "../api/data.js";
 //import { getUserData } from "../utility.js";//logged or not info
 
+//edit
+//add in </form>                       @submit=${onSubmit}
+//add in </input>                      placeholder="Name" (most of the time its already added)
+//add in </input>                      .value="${item.name}"
+//replace text with variables:         ${item.name}
+////copy shape here:
+
+
 const editTemplate = (item, onSubmit) => html`
 <!--TO DO -->
 
 `;
-
-//edit
-//.value,item,id,class,href,type,name,id,placeholder,@submit=${onSubmit}
-//copy shape here:
-
-
+//example
 const editTemplate2 = (item, onSubmit) => html`
 <section id="edit">
 		<h2>Edit Motorcycle</h2>
@@ -84,9 +87,8 @@ export async function editPage(ctx) {
     item.preventDefault();
     const formData = new FormData(item.target);
     const editItem = {
-    //fix names
+    //fix properties
     //copy shape here:
-	//copy shape from create.js
 
     
     model: formData.get("model").trim(),
@@ -95,6 +97,8 @@ export async function editPage(ctx) {
     mileage: formData.get("mileage").trim(),
     contact: formData.get("contact").trim(),
     about: formData.get("about").trim(),
+    //shapeName: formData.get("name="name" ").trim(),// shape : name=""
+	//year: Number(formData.get("year").trim()),//if edit makes correct API call test falls
     };
     if (Object.values(editItem).some((x) => !x)) {
       return alert("All fields are required!");

@@ -6,6 +6,16 @@ import {
 } from "../api/data.js";
 //import { getUserData } from "../utility.js";//logged or not info
 
+//details: owner1,login1
+//replace text with variables:     ${item.name}
+//replace src with image shape:    src="${item.imageUrl}"
+//fix href="#" on "Edit" button:   href="/edit/${item._id}"
+//add to "Delete" button:          @click=${onDelete} href="javascript:void(0)"
+//use "owner1" for isOwner 
+//use "login1" for isLoggedIn
+////copy shape here:
+
+
 const detailsTemplate = (
   item,
   isOwner,
@@ -16,13 +26,7 @@ const detailsTemplate = (
 <!--TO DO-->
 
 `;
-
-//details
-//item,href,isOwner,isLoggedIn,alt,@click=${onDelete}
-//id,class
-//copy shape here:
-
-
+//example
 const detailsTemplate2 = (
   item,
   isOwner,
