@@ -1,5 +1,5 @@
 <img src="https://i.imgur.com/MfJaTqn.png" alt="Certificate"/>
-
+ 
 ### 📚 JS Applications
 
 Welcome to the JS Applications course! This course will equip participants with the knowledge and skills required to work with JavaScript applications. Throughout this course, you will delve into various aspects of web development, including HTTP requests, REST Services, Backend as a Service (BaaS), asynchronous code (Promises, async/await), templating, and routing.
