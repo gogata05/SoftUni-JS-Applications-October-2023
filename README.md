@@ -1,5 +1,5 @@
 <img src="https://i.imgur.com/MfJaTqn.png" alt="Certificate"/>
- 
+  
 ### 📚 SoftUni-JS-Applications-October-2023
 
 ### 🎓 Course Link - [Here](https://softuni.bg/trainings/4228/js-applications-october-2023)
