@@ -1,6 +1,8 @@
 <img src="https://i.imgur.com/MfJaTqn.png" alt="Certificate"/>
  
-### 📚 JS Applications
+### 📚 SoftUni-JS-Applications-October-2023
+
+### 🎓 Course Link - [Here](https://softuni.bg/trainings/4228/js-applications-october-2023)
 
 Welcome to the JS Applications course! This course will equip participants with the knowledge and skills required to work with JavaScript applications. Throughout this course, you will delve into various aspects of web development, including HTTP requests, REST Services, Backend as a Service (BaaS), asynchronous code (Promises, async/await), templating, and routing.
 
